@@ -1,0 +1,25 @@
+{
+  "name": "Sample",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Sample Chrome Extension",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/watch*"
+        ,
+        "https://www.nicovideo.jp/watch/sm*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["ChromaSDKImpl.js", "background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "webRequest",
+    "http://localhost:*/razer/chromasdk",
+    "https://localhost:*/razer/chromasdk"
+  ]
+}
