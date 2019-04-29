@@ -5,14 +5,12 @@
   "description": "displaing youtube video on razer keyboard",
   "content_scripts": [
     {
-      "matches": [
-        "https://www.youtube.com/watch*"
-      ],
-      "js": ["content.js"]
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["keyMap.js", "content.js"]
     }
   ],
   "background": {
-    "scripts": ["ChromaSDKImpl.js", "background.js"],
+    "scripts": ["keyMap.js", "ChromaSDKImpl.js", "background.js"],
     "persistent": true
   },
   "permissions": [
