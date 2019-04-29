@@ -95,7 +95,7 @@ var keyMap = [
 ];
 
 var keyData;
-var ifYoutube = true;
+var isYoutube = true;
 
 window.onload = function() {
   keyData = new Array(6);
@@ -110,18 +110,18 @@ window.onload = function() {
   }
 
   port = chrome.extension.connect({ name: "ch" });
-  port.postMessage({ title: title, status: "init" });
+  port.postMessage({ status: "init" });
 
   var youtube = document.getElementsByClassName("html5-main-video");
-  if (youtube !=null) {
-    ifYoutube = true;
+  if (youtube.length>0) {
+    isYoutube = true;
     video = youtube[0];
     canvas = document.createElement("canvas");
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
   } else {
     //ニコニコ
-    ifYoutube = false;
+    isYoutube = false;
     canvas = document.getElementsByClassName("VideoSymbolContainer-canvas")[0];
   }
 
@@ -132,7 +132,7 @@ window.onload = function() {
 };
 
 window.onunload = function() {
-  port.postMessage({ title: title, status: "close" });
+  port.postMessage({ status: "close" });
 };
 
 function getImage() {

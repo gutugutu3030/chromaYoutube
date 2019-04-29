@@ -1,14 +1,12 @@
 {
-  "name": "Sample",
-  "version": "1.0.0",
+  "name": "chromaYoutube",
+  "version": "0.1.0",
   "manifest_version": 2,
-  "description": "Sample Chrome Extension",
+  "description": "displaing youtube video on razer keyboard",
   "content_scripts": [
     {
       "matches": [
         "https://www.youtube.com/watch*"
-        ,
-        "https://www.nicovideo.jp/watch/sm*"
       ],
       "js": ["content.js"]
     }
